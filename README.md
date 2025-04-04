@@ -27,7 +27,7 @@ Boolog for Java is a wrapper for the Kotlin version that allows its use as if it
 ## Example Code
 For usage, refer to this example program and the JavaDoc comments.
 
-[Example Program](src/test/Java/BoologJavaExample.java) (See also the [TestStruct](src/test/Java/TestStruct.java) it uses.)
+[Example Program](src/test/java/BoologJavaExample.java) (See also the [TestStruct](src/test/java/TestStruct.java) it uses.)
 
 ## Supported Themes
 
