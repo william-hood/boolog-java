@@ -23,7 +23,13 @@ package io.github.william_hood.boolog_java;
 
 import io.github.william_hood.boolog_kotlin.StringHandlingKt;
 
+/**
+ * Contains several static functions for string handling. StringHandler should not be instantiated.
+ */
 public class StringHandler {
+    // This class should not be instantiated.
+    private StringHandler() {}
+
     /**
      * isBase64: This function attempts to determine if a given string can be decoded as Base64. PROBLEM: There appear to
      * be some small english strings that technically can decode as Base64 (producing garbage).
@@ -49,8 +55,8 @@ public class StringHandler {
      * treatAsCode: Wraps the given string with HTML tags that prevent rendering of any HTML by the browser and
      * display the value as a code sample.
      *
-     * @param value The string value to be wrapped as a code sample.
-     * @return The wrapped string. Specifically "<pre><code><xmp>$value</xmp></code></pre>".
+     * @param value The string value to be wrapped as a code sample. More specifically, surrounds the value with tags for pre, code, and xmp.
+     * @return The wrapped string.
      */
     public static String treatAsCode(String value) {
         return StringHandlingKt.treatAsCode(value);

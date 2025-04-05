@@ -38,13 +38,45 @@ import java.util.Map;
 public class Boolog {
     private io.github.william_hood.boolog_kotlin.Boolog KBoolog;
 
+    /**
+     * A light theme with thin outlines and minimal to no gradients. (Default in version 3.1)
+     */
     public static final String THEME_LIGHT = ThemeLightKt.THEME_LIGHT;
+
+    /**
+     * A light theme with no outlines giving a flat, almost paper like appearance.
+     */
     public static final String THEME_LIGHT_FLAT = ThemeLightFlatKt.THEME_LIGHT_FLAT;
+
+    /**
+     * A light theme with vivid gradients. This is the theme used in version 3.0 and prior.
+     */
     public static final String THEME_CLASSIC = ThemeClassicKt.THEME_CLASSIC;
+
+    /**
+     * A dark theme with bold outlines.
+     */
     public static final String THEME_DARK = ThemeDarkKt.THEME_DARK;
+
+    /**
+     * A dark theme with no outlines giving a flat, sci-fi appearance.
+     */
     public static final String THEME_DARK_FLAT = ThemeDarkFlatKt.THEME_DARK_FLAT;
+
+    /**
+     * A dark theme with gradients, similar to THEME_CLASSIC.
+     */
     public static final String THEME_DARK_GRADIENT = ThemeDarkGradientKt.THEME_DARK_GRADIENT;
+
+    /**
+     * Omits all CSS theme and style information. Only use this when creating a Boolog that will not have it's own HTML file.
+     * (A Boolog being embedded in another Boolog will use the theme of its parent.)
+     */
     public static final String THEME_NONE = ConstantsKt.THEME_NONE;
+
+    /**
+     * Use this if you don't know or don't care which theme to use. (THEME_LIGHT is the default in version 3.1)
+     */
     public static final String THEME_DEFAULT = ConstantsKt.THEME_DEFAULT;
 
     //=== Primary Constructor
@@ -97,7 +129,7 @@ public class Boolog {
     //=== Alternate Constructors
 
     /**
-     * Alternate constructor for the Boolog Java Wrapper that assumes showing emojis & timestamps, no headerFunction and no output for plain text or HTML.
+     * Alternate constructor for the Boolog Java Wrapper that assumes showing emojis and timestamps, no headerFunction and no output for plain text or HTML.
      * This contains a Kotlin Boolog but does not extend it nor expose it in any way.
      * Boolog is a logging system designed to produce rich, readable HTML-based output with appropriate
      * console output accompanying it. A Boolog may be a root-level log file, a subsection of another Boolog, or both.
@@ -254,20 +286,49 @@ public class Boolog {
         this(title, null, null, showTimestamps, showEmojis, THEME_NONE, headerFunction);
     }
 
+    /**
+     * Alternate constructor if you have a Kotlin Boolog instance and wish to create a Java Boolog wrapped around it.
+     * @param kotlinBoolog This must be a Kotlin Boolog. Passing it a Java Boolog will not compile.
+     */
     public Boolog(io.github.william_hood.boolog_kotlin.Boolog kotlinBoolog) {
         KBoolog = kotlinBoolog;
     }
 
     //=== Property Field Getters
 
+    /**
+     * Use this to get this Boolog's title.
+     * @return Returns the title for this Boolog set when it was constructed.
+     */
     public String getTitle() { return KBoolog.getTitle(); }
+
+    /**
+     * Gets the PrintWriter used for plain text output. This is typically stdout, but may be a text file.
+     * @return Returns the PrintWriter used for plain text output.
+     */
     public PrintWriter getPlainTextPrintWriter() { return KBoolog.getForPlainText(); }
+
+    /**
+     * Gets the PrintWriter used for HTML output. This will almost always be pointing to an output file.
+     * @return Returns the PrintWriter used for HTML output.
+     */
     public PrintWriter getHTMLPrintWriter() { return KBoolog.getForHTML(); }
+
+    /**
+     * Identifies whether or not time stamps are being shown. Boologs may omit the time stamp to save horizontal space or in situations where the time of the output is not relevant.
+     * @return Normally returns true. Boologs created to omit the time stamp column will return false.
+     */
     public Boolean isShowingTimestamps() { return KBoolog.getShowTimestamps(); }
+
+    /**
+     * Identifies whether or not emojis are being shown. The emoji column is a visual aid to help the reader identify what kind of message it accompanies. Certain uses of Boolog may want to output a file for which the emoji column is not appropriate.
+     * @return Normally returns true. Boologs created to omit the emoji column will return false.
+     */
     public Boolean isShowingEmojis() { return KBoolog.getShowEmojis(); }
 
     /**
-     * Will return false if this boolog never got used. This may be used to decline adding an empty subsection to another Boolog.
+     * Will return false if this Boolog never got used. This may be used to decline adding an empty subsection to another Boolog.
+     * @return False if this Boolog has never been used. True otherwise.
      */
     public Boolean wasUsed() { return KBoolog.getWasUsed(); }
 
