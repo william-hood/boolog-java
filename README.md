@@ -28,6 +28,8 @@ For usage, refer to this example program and the JavaDoc comments.
 
 [Example Program](src/test/java/BoologJavaExample.java) (See also the [TestStruct](src/test/java/TestStruct.java) it uses.)
 
+*If you run the example code on your system, expect the actual log file to appear in `(User Home)/Documents/Test Results`.*
+
 ## Supported Themes
 
 [Themes Poster (GIF)](examples/Poster.gif)
