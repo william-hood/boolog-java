@@ -1,14 +1,13 @@
 ##### Release 3.1
-# BOOLOG
-### (Wrapped for Java)
+# BOOLOG for Java
 
-<hr>
+*JUnit Testing version [here](https://github.com/william-hood/boolog-junit)*
+
+*Kotlin version [here](https://github.com/william-hood/boolog-kotlin)*
 
 *Go version [here](https://github.com/william-hood/boolog-go)*
 
 *Rust version [here](https://github.com/william-hood/boolog-rust)*
-
-*Kotlin version [here](https://github.com/william-hood/boolog-kotlin)*
 <hr>
 <img align="left" src="examples/boolog-logo-sm.gif">
 
